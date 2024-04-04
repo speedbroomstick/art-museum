@@ -4,8 +4,8 @@ import {
 	TopBar,
 	YourFavorites,
 } from './styled';
-import museumLogo from '../../assets/museumLogo.svg';
-import bookmark from '../../assets/bookMark.svg';
+import museumLogo from 'assets/museumLogo.svg';
+import bookmark from 'assets/bookMark.svg';
 
 export function Header() {
 	return (

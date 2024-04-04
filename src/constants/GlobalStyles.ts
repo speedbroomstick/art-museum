@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
     @font-face {
         font-family: "Inter";
-        src: url("../assets/fonts/Inter.ttf");
+        src: url("assets/fonts/Inter.ttf");
     }
     *{
         box-sizing: border-box;
