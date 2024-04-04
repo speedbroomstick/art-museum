@@ -5,6 +5,10 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "Inter";
         src: url("assets/fonts/Inter.ttf");
     }
+    @font-face {
+        font-family: "Lexend";
+        src: url("assets/fonts/Lexend.ttf");
+    }
     *{
         box-sizing: border-box;
         margin: 0;
