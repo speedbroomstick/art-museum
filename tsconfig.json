@@ -24,7 +24,9 @@
 			"assets": ["assets/*"],
 			"components": ["components/*"],
 			"constants": ["constants/*"],
-			"pages": ["pages/*"]
+			"pages": ["pages/*"],
+			"store": ["sotre/*"],
+			"utils": ["utils/*"]
 		}
 	},
 	"include": ["src"],
