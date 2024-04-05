@@ -11,7 +11,7 @@ export default defineConfig({
 			constants: '/src/constants',
 			pages: '/src/pages',
 			store: '/src/store',
-			utils: '/src/utils'
+			utils: '/src/utils',
 		},
 	},
 });
