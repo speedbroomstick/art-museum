@@ -2,11 +2,13 @@ import styled from 'styled-components';
 
 export const DetailsBlock = styled.div`
 	display: flex;
+	width: 80%;
 	height: 100%;
 	background-color: rgb(240, 241, 241);
 	align-items: center;
 	justify-content: space-between;
 	padding: 32px 24px;
+	margin-top: -4rem;
 	& > div > div > h4 {
 		margin-bottom: 0.5rem;
 	}
