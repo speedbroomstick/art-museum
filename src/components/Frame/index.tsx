@@ -1,7 +1,12 @@
 import { InfoBlock } from 'components/InfoBlock';
-import { CardContainer, FrameContainer, ImageStyled } from 'components/Frame/styled';
+import {
+	CardContainer,
+	FrameContainer,
+	ImageStyled,
+} from 'components/Frame/styled';
 import image from 'assets/image.png';
 import { HeaderForSection } from 'components/HeaderForSection';
+import { Pagination } from 'components/Pagination';
 
 export function Frame() {
 	return (
@@ -21,6 +26,7 @@ export function Frame() {
 					<InfoBlock />
 				</CardContainer>
 			</FrameContainer>
+			<Pagination />
 		</>
 	);
 }
