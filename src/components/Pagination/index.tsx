@@ -8,7 +8,9 @@ export function Pagination() {
 			<Link href="2">2</Link>
 			<Link href="3">3</Link>
 			<Link href="4">4</Link>
-			<Link href='5'><img src={arrow} alt="" /></Link>
+			<Link href="5">
+				<img src={arrow} alt="" />
+			</Link>
 		</PaginationDiv>
 	);
 }

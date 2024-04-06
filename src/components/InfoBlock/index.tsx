@@ -6,16 +6,21 @@ import {
 	FavoriteButton,
 	StatusText,
 } from './styled';
+import { IInfoBlock } from 'utils/IInfoBlock';
 
-export function InfoBlock() {
+export function InfoBlock({
+	title,
+	artist_title,
+	verificationLevel,
+}: IInfoBlock) {
 	return (
 		<DetailsBlock>
 			<div>
 				<div>
-					<ArtText>Charles V, bust length...</ArtText>
-					<ArtistText>Giovanni Britto</ArtistText>
+					<ArtText>{title}</ArtText>
+					<ArtistText>{artist_title}</ArtistText>
 				</div>
-				<StatusText>Public</StatusText>
+				<StatusText>{verificationLevel}</StatusText>
 			</div>
 			<FavoriteButton>
 				<img src={bookMark} alt="" />

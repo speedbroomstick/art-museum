@@ -21,9 +21,9 @@ export const ActiveLink = styled.a`
 	width: 30px;
 	height: 30px;
 	text-decoration: none;
-	color: rgb(255,255,255);
+	color: rgb(255, 255, 255);
 	font-size: 18px;
 	font-weight: 700;
 	border-radius: 5px;
 	background-color: rgb(241, 121, 0);
-`
+`;
