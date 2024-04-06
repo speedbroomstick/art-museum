@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { FlexContainer } from 'constants/FlexContainer';
+import { FontStyle } from 'constants/FontStyle';
 
 export const HeaderText = styled.h2`
 	font-family: 'Lexend', sans-serif;
@@ -6,21 +8,19 @@ export const HeaderText = styled.h2`
 	font-size: 64px;
 	line-height: 80px;
 	text-align: center;
-	color: rgb(57, 57, 57);
+	color: ${({ theme }) => theme.colors.black};
 	width: 40rem;
 `;
 export const OrangeSpan = styled.span`
-	color: rgba(241, 121, 0, 1);
+	color: rgba(241, 121, 0);
 `;
 export const VerticalContainer = styled.div`
-	display: flex;
+	${FlexContainer}
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
 	margin-top: ${({ theme }) => theme.marginTop ?? 0};
 `;
 export const InputSearch = styled.input`
+	${FontStyle}
 	width: clamp(300px, 100%, 762px);
 	height: 64px;
 	padding: 16px;
@@ -28,8 +28,6 @@ export const InputSearch = styled.input`
 	border-radius: 16px;
 	border: none;
 	font-family: 'Inter', sans-serif;
-	font-weight: 400;
-	font-size: 14px;
 	color: rgba(57, 57, 57, 0.5);
 	&:hover,
 	&:focus {
@@ -40,10 +38,7 @@ export const InputSearch = styled.input`
 	}
 `;
 export const InputContainer = styled.div`
-	display: flex;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
+	${FlexContainer}
 	margin-top: 5rem;
 `;
 export const Magnifier = styled.img`

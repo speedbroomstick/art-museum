@@ -1,11 +1,14 @@
-import { VerticalContainer } from 'components/SearchSection/styled';
-import { MainTitle, OrangeText } from 'components/HeaderForSection/styled';
+import {
+	ContainerForHeader,
+	MainTitle,
+	OrangeText,
+} from 'components/HeaderForSection/styled';
 
 export function HeaderForSection() {
 	return (
-		<VerticalContainer>
+		<ContainerForHeader>
 			<OrangeText>Topics for you</OrangeText>
 			<MainTitle>Our special gallery</MainTitle>
-		</VerticalContainer>
+		</ContainerForHeader>
 	);
 }

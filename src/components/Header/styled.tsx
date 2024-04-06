@@ -1,13 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { FlexContainer } from 'constants/FlexContainer';
+import { FontStyle } from 'constants/FontStyle';
 
-const SharedDivStyles = css`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
 export const HeaderStyled = styled.header`
-	${SharedDivStyles}
-	width: 100%;
+	${FlexContainer}
 	height: 127px;
 	background: linear-gradient(
 		90deg,
@@ -19,17 +15,17 @@ export const HeaderStyled = styled.header`
 `;
 
 export const HorizontalContainer = styled.div`
-	${SharedDivStyles}
+	${FlexContainer}
+	width: 10rem;
 `;
 export const TopBar = styled.div`
-	${SharedDivStyles}
-	width: 100%;
+	${FlexContainer}
 	justify-content: space-between;
 `;
 
 export const YourFavorites = styled.a`
+	${FontStyle}
 	font-family: 'Inter', sans-serif;
-	font-weight: 400;
 	font-size: 18px;
 	text-decoration: none;
 	color: rgb(255, 255, 255);

@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { FlexContainer } from 'constants/FlexContainer';
+import { FontStyle } from 'constants/FontStyle';
 
 export const DetailsBlock = styled.div`
-	display: flex;
+	${FlexContainer}
 	width: 80%;
 	height: 100%;
 	background-color: rgb(240, 241, 241);
-	align-items: center;
 	justify-content: space-between;
 	padding: 32px 24px;
 	margin-top: -4rem;
@@ -18,9 +19,7 @@ export const DetailsBlock = styled.div`
 `;
 
 export const FavoriteButton = styled.button`
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	${FlexContainer}
 	width: 59px;
 	height: 59px;
 	align-self: center;
@@ -33,20 +32,17 @@ export const FavoriteButton = styled.button`
 	}
 `;
 export const ArtText = styled.h4`
-	font-family: 'Lexend', sans-serif;
+	${FontStyle}
 	font-weight: 500;
 	font-size: 17.5px;
-	color: rgb(57, 57, 57);
+	color: ${({ theme }) => theme.colors.black};
 `;
 export const ArtistText = styled.h5`
-	font-family: 'Lexend', sans-serif;
-	font-weight: 400;
-	font-size: 15.3px;
-	color: rgb(224, 164, 73);
+	${FontStyle}
+	color: ${({ theme }) => theme.colors.orange};
 `;
 export const StatusText = styled.h4`
-	font-family: 'Lexend', sans-serif;
+	${FontStyle}
 	font-weight: 700;
-	font-size: 15.5px;
-	color: rgb(57, 57, 57);
+	color: ${({ theme }) => theme.colors.black};
 `;

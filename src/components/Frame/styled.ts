@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { FlexContainer } from 'constants/FlexContainer';
 
 export const FrameContainer = styled.section`
 	display: grid;
@@ -9,7 +10,6 @@ export const FrameContainer = styled.section`
 	gap: 5rem;
 `;
 export const CardContainer = styled.div`
-	display: flex;
+	${FlexContainer}
 	flex-direction: column;
-	align-items: center;
 `;
