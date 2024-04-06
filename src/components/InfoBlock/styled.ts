@@ -5,7 +5,7 @@ import { FontStyle } from 'constants/FontStyle';
 export const DetailsBlock = styled.div`
 	${FlexContainer}
 	width: 80%;
-	height: 100%;
+	height: clamp(130px,10vh,400px);
 	background-color: rgb(240, 241, 241);
 	justify-content: space-between;
 	padding: 32px 24px;
