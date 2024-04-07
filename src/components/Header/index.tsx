@@ -6,12 +6,13 @@ import {
 } from './styled';
 import museumLogo from 'assets/svg/museumLogo.svg';
 import bookmark from 'assets/svg/bookMark.svg';
+import { ImageLogo } from 'components/Footer/styled';
 
 export function Header() {
 	return (
 		<HeaderStyled>
 			<TopBar>
-				<img src={museumLogo} alt="" />
+				<ImageLogo src={museumLogo} alt="" />
 				<HorizontalContainer>
 					<img src={bookmark} alt="" />
 					<YourFavorites href="#">Your favorites</YourFavorites>
