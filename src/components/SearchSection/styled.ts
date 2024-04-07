@@ -10,6 +10,13 @@ export const HeaderText = styled.h2`
 	text-align: center;
 	color: ${({ theme }) => theme.colors.black};
 	width: 40rem;
+	@media (max-width: 800px) {
+		font-size: 40px;
+		width: 20rem;
+	}
+	@media (max-width: 500px) {
+		font-size: 30px;
+	}
 `;
 export const OrangeSpan = styled.span`
 	color: rgba(241, 121, 0);
@@ -21,7 +28,7 @@ export const VerticalContainer = styled.div`
 `;
 export const InputSearch = styled.input`
 	${FontStyle}
-	width: clamp(300px, 100%, 762px);
+	width: clamp(300px, 95%, 762px);
 	height: 64px;
 	padding: 16px;
 	background-color: rgba(57, 57, 57, 0.05);
