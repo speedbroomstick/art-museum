@@ -13,13 +13,13 @@ import { useGetPaintings } from 'utils/useGetPaintings';
 
 export function Frame() {
 	const [page, setPage] = useState(1);
-	const {painting,pagination,status} = useGetPaintings(page)
+	const { painting, pagination, status } = useGetPaintings(page);
 
 	return (
 		<>
 			<HeaderForSection />
 			<FrameContainer>
-				{status === "fulfilled" && painting ? (
+				{status === 'fulfilled' && painting ? (
 					<>
 						{painting.data.map((painting) => (
 							<CardContainer key={painting.id}>
@@ -41,7 +41,9 @@ export function Frame() {
 					</Loader>
 				)}
 			</FrameContainer>
-			{pagination ? <Pagination paginationData={pagination} setPage={setPage} /> : null}
+			{pagination ? (
+				<Pagination paginationData={pagination} setPage={setPage} />
+			) : null}
 		</>
 	);
 }

@@ -14,10 +14,12 @@ export const paintingApi = createApi({
 			query: ({ page = 1, limit }) =>
 				`api/v1/artworks/search?page=${page}&limit=${limit}&q=painting&fields=id`,
 		}),
-		getPaintingsByIds: builder.query<IPaintingByIdAnswer, number[]|undefined>({
-			query: (ids) =>
-				`api/v1/artworks?ids=${ids?.join()}&fields=id,artist_title,image_id,title`,
-		}),
+		getPaintingsByIds: builder.query<IPaintingByIdAnswer, number[] | undefined>(
+			{
+				query: (ids) =>
+					`api/v1/artworks?ids=${ids?.join()}&fields=id,artist_title,image_id,title`,
+			}
+		),
 	}),
 });
 

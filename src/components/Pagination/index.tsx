@@ -7,7 +7,7 @@ export function Pagination({ paginationData, setPage }: IPagination) {
 	const currentPage = paginationData.current_page;
 	return (
 		<PaginationDiv>
-			{currentPage>1 ? (
+			{currentPage > 1 ? (
 				<>
 					<Link onClick={() => setPage(currentPage - 1)}>
 						<img src={backArrow} alt="" />
@@ -25,7 +25,7 @@ export function Pagination({ paginationData, setPage }: IPagination) {
 			<ActiveLink onClick={() => setPage(currentPage)}>
 				{currentPage}
 			</ActiveLink>
-			{currentPage<paginationData.total_pages ? (
+			{currentPage < paginationData.total_pages ? (
 				<>
 					<Link onClick={() => setPage(currentPage + 1)}>
 						{currentPage + 1}
