@@ -3,19 +3,25 @@ import {
 	CardContainer,
 	FrameContainer,
 	ImageStyled,
+	Loader,
 } from 'components/Frame/styled';
 import { HeaderForSection } from 'components/HeaderForSection';
 import { Pagination } from 'components/Pagination';
 import { useGetPaintingsQuery } from 'store/api/api';
+import { useState } from 'react';
+import loader from 'assets/svg/loader.svg';
 
 export function Frame() {
-	const { status, data } = useGetPaintingsQuery({ page: 1, limit: 3 });
+	const [page, setPage] = useState(1);
+	const { status, data } = useGetPaintingsQuery({ page, limit: 3 });
+
 	return (
 		<>
 			<HeaderForSection />
 			<FrameContainer>
-				{status == 'fulfilled' && data
-					? data.data.map((painting) => (
+				{status === 'fulfilled' && data ? (
+					<>
+						{data.data.map((painting) => (
 							<CardContainer key={painting.id}>
 								<ImageStyled
 									src={`https://www.artic.edu/iiif/2/${painting.image_id}/full/387,444/0/default.jpg`}
@@ -27,10 +33,15 @@ export function Frame() {
 									verificationLevel={painting.publishing_verification_level}
 								/>
 							</CardContainer>
-						))
-					: null}
+						))}
+					</>
+				) : (
+					<Loader>
+						<img src={loader} alt="something went wrong" />
+					</Loader>
+				)}
 			</FrameContainer>
-			<Pagination />
+			{data ? <Pagination data={data} setPage={setPage} /> : null}
 		</>
 	);
 }

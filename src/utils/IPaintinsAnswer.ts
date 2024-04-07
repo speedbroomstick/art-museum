@@ -12,7 +12,7 @@ export interface IPagination {
 	total_pages: number;
 	current_page: number;
 	prev_url?: string;
-	next_url: string;
+	next_url?: string;
 }
 
 export interface IDaum {

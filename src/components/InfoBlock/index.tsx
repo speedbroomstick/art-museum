@@ -1,4 +1,4 @@
-import bookMark from 'assets/bookMark.svg';
+import bookMark from 'assets/svg/bookMark.svg';
 import {
 	ArtText,
 	ArtistText,

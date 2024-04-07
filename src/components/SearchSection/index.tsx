@@ -6,7 +6,7 @@ import {
 	VerticalContainer,
 	InputContainer,
 } from 'components/SearchSection/styled';
-import magnifier from 'assets/magnifier.svg';
+import magnifier from 'assets/svg/magnifier.svg';
 
 export function SearchSection() {
 	return (

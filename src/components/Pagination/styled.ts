@@ -14,6 +14,9 @@ export const Link = styled.a`
 	text-decoration: none;
 	color: ${({ theme }) => theme.colors.black};
 	font-size: 18px;
+	&:hover {
+		cursor: pointer;
+	}
 `;
 export const ActiveLink = styled.a`
 	${FlexContainer}
@@ -26,4 +29,7 @@ export const ActiveLink = styled.a`
 	font-weight: 700;
 	border-radius: 5px;
 	background-color: rgb(241, 121, 0);
+	&:hover {
+		cursor: pointer;
+	}
 `;
