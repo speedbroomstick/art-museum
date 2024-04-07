@@ -1,13 +1,13 @@
 import arrow from 'assets/svg/arrow.svg';
 import backArrow from 'assets/svg/BackArrow.svg';
 import { ActiveLink, Link, PaginationDiv } from 'components/Pagination/styled';
-import { IPagination } from 'utils/IPagination';
+import { IPagination } from 'constants/IPagination';
 
-export function Pagination({ data, setPage }: IPagination) {
-	const currentPage = data.pagination.current_page;
+export function Pagination({ paginationData, setPage }: IPagination) {
+	const currentPage = paginationData.current_page;
 	return (
 		<PaginationDiv>
-			{data.pagination.prev_url ? (
+			{currentPage>1 ? (
 				<>
 					<Link onClick={() => setPage(currentPage - 1)}>
 						<img src={backArrow} alt="" />
@@ -25,12 +25,12 @@ export function Pagination({ data, setPage }: IPagination) {
 			<ActiveLink onClick={() => setPage(currentPage)}>
 				{currentPage}
 			</ActiveLink>
-			{data.pagination.next_url ? (
+			{currentPage<paginationData.total_pages ? (
 				<>
 					<Link onClick={() => setPage(currentPage + 1)}>
 						{currentPage + 1}
 					</Link>
-					{currentPage + 2 <= data.pagination.total_pages ? (
+					{currentPage + 2 <= paginationData.total_pages ? (
 						<Link onClick={() => setPage(currentPage + 2)}>
 							{currentPage + 2}
 						</Link>

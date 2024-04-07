@@ -11,7 +11,7 @@ export const HeaderStyled = styled.header`
 		#484848 69.22%,
 		#282828 98.98%
 	);
-	padding: 0 min(160px,10%);
+	padding: 0 min(160px, 10%);
 `;
 
 export const HorizontalContainer = styled.div`

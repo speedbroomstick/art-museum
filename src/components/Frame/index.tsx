@@ -7,21 +7,21 @@ import {
 } from 'components/Frame/styled';
 import { HeaderForSection } from 'components/HeaderForSection';
 import { Pagination } from 'components/Pagination';
-import { useGetPaintingsQuery } from 'store/api/api';
 import { useState } from 'react';
 import loader from 'assets/svg/loader.svg';
+import { useGetPaintings } from 'utils/useGetPaintings';
 
 export function Frame() {
 	const [page, setPage] = useState(1);
-	const { status, data } = useGetPaintingsQuery({ page, limit: 3 });
+	const {painting,pagination,status} = useGetPaintings(page)
 
 	return (
 		<>
 			<HeaderForSection />
 			<FrameContainer>
-				{status === 'fulfilled' && data ? (
+				{status === "fulfilled" && painting ? (
 					<>
-						{data.data.map((painting) => (
+						{painting.data.map((painting) => (
 							<CardContainer key={painting.id}>
 								<ImageStyled
 									src={`https://www.artic.edu/iiif/2/${painting.image_id}/full/387,444/0/default.jpg`}
@@ -30,7 +30,7 @@ export function Frame() {
 								<InfoBlock
 									title={painting.title}
 									artist_title={painting.artist_title}
-									verificationLevel={painting.publishing_verification_level}
+									verificationLevel="public"
 								/>
 							</CardContainer>
 						))}
@@ -41,7 +41,7 @@ export function Frame() {
 					</Loader>
 				)}
 			</FrameContainer>
-			{data ? <Pagination data={data} setPage={setPage} /> : null}
+			{pagination ? <Pagination paginationData={pagination} setPage={setPage} /> : null}
 		</>
 	);
 }
