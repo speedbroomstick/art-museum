@@ -4,11 +4,17 @@ import {
 	OrangeText,
 } from 'components/HeaderForSection/styled';
 
-export function HeaderForSection() {
+export function HeaderForSection({
+	orangeText,
+	mainTitle,
+}: {
+	orangeText: string;
+	mainTitle: string;
+}) {
 	return (
 		<ContainerForHeader>
-			<OrangeText>Topics for you</OrangeText>
-			<MainTitle>Our special gallery</MainTitle>
+			<OrangeText>{orangeText}</OrangeText>
+			<MainTitle>{mainTitle}</MainTitle>
 		</ContainerForHeader>
 	);
 }
