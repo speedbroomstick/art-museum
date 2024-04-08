@@ -28,5 +28,5 @@ export const ImageStyled = styled.img`
 `;
 export const Loader = styled.div`
 	${FlexContainer}
-	height: 800px;
+	grid-column: 2/3;
 `;
