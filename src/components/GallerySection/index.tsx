@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useGetPaintings } from 'utils/useGetPaintings';
 import { FrameContainerSection } from 'components/FrameContainerSection';
 
-export function Frame() {
+export function GallerySection() {
 	const [page, setPage] = useState(1);
 	const { painting, pagination, status } = useGetPaintings(page, 3);
 

@@ -4,4 +4,5 @@ import { IPaintingByIdAnswer } from 'constants/IPaintingByIdAnswer';
 export interface IFrameContainerSection {
 	status: QueryStatus;
 	paintings: IPaintingByIdAnswer | undefined;
+	inset?: boolean;
 }

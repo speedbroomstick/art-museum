@@ -4,19 +4,22 @@ import {
 	ArtistText,
 	DetailsBlock,
 	FavoriteButton,
+	ImageContainer,
 	StatusText,
 } from './styled';
-import { IInfoBlock } from 'utils/IInfoBlock';
+import { IInfoBlock } from 'constants/IInfoBlock';
 
 export function InfoBlock({
 	title,
 	artist_title,
 	verificationLevel,
+	image,
 }: IInfoBlock) {
 	return (
-		<DetailsBlock>
+		<DetailsBlock $image={!!image}>
+			{image ? <ImageContainer src={image} /> : null}
 			<div>
-				<div>
+				<div style={{ textOverflow: 'ellipsis' }}>
 					<ArtText>{title}</ArtText>
 					<ArtistText>{artist_title}</ArtistText>
 				</div>

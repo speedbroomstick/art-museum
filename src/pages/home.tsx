@@ -1,6 +1,6 @@
 import { SearchSection } from 'components/SearchSection';
 import { Header } from 'components/Header';
-import { Frame } from 'components/Frame';
+import { GallerySection } from 'components/GallerySection';
 import { Footer } from 'components/Footer';
 import { OtherWorks } from 'components/OtherWorks';
 
@@ -9,7 +9,7 @@ export function HomePage() {
 		<>
 			<Header />
 			<SearchSection />
-			<Frame />
+			<GallerySection />
 			<OtherWorks />
 			<Footer />
 		</>
