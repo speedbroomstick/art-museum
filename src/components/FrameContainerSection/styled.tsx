@@ -1,4 +1,5 @@
 import { FlexContainer } from 'constants/FlexContainer';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const FrameContainer = styled.section<{ $inset?: boolean }>`
@@ -29,4 +30,10 @@ export const ImageStyled = styled.img`
 export const Loader = styled.div`
 	${FlexContainer}
 	grid-column: 2/3;
+`;
+export const LinkStyled = styled(Link)`
+	text-decoration: none;
+	&:hover {
+		transform: scale(0.9);
+	}
 `;

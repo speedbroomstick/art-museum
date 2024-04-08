@@ -9,6 +9,12 @@ interface IDaum {
 	title: string;
 	artist_title: string;
 	image_id: string;
+	date_display: string;
+	place_of_origin: string;
+	dimensions: string;
+	credit_line: string;
+	is_public_domain: boolean;
+	artist_display: string;
 }
 
 interface IInfo {

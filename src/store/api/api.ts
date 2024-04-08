@@ -19,7 +19,7 @@ export const paintingApi = createApi({
 			{ ids: number[] | undefined; limit: number }
 		>({
 			query: ({ ids, limit }) =>
-				`api/v1/artworks?ids=${ids?.join()}&fields=id,artist_title,image_id,title&limit=${limit}`,
+				`api/v1/artworks?ids=${ids?.join()}&fields=id,artist_title,image_id,title,date_display,place_of_origin,dimensions,credit_line,is_public_domain,artist_display&limit=${limit}`,
 		}),
 	}),
 });
