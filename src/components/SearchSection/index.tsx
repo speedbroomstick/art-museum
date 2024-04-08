@@ -7,8 +7,13 @@ import {
 	InputContainer,
 } from 'components/SearchSection/styled';
 import magnifier from 'assets/svg/magnifier.svg';
+import { useActions } from 'utils/useActions';
+import { useDebounce } from 'utils/useDebounce';
 
 export function SearchSection() {
+	const { setValueSearch } = useActions();
+	const debouncedValue = useDebounce(setValueSearch, 2000);
+
 	return (
 		<VerticalContainer theme={{ marginTop: '5rem' }}>
 			<HeaderText>
@@ -19,6 +24,7 @@ export function SearchSection() {
 					type="text"
 					name="search"
 					placeholder="Search Art, Artist, Work..."
+					onChange={(e) => debouncedValue(e.target.value)}
 				/>
 				<Magnifier src={magnifier} alt="" />
 			</InputContainer>

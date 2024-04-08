@@ -9,15 +9,15 @@ export const paintingApi = createApi({
 	endpoints: (builder) => ({
 		getPaintings: builder.query<
 			IPaintingsAnswer,
-			{ page: number; limit: number }
+			{ page: number; limit: number; search: string }
 		>({
-			query: ({ page = 1, limit }) =>
-				`api/v1/artworks/search?page=${page}&limit=${limit}&q=painting&fields=id`,
+			query: ({ page = 1, limit, search = '' }) =>
+				`api/v1/artworks/search?page=${page}&limit=${limit}&q=painting ${search}&fields=id`,
 		}),
 		getPaintingsByIds: builder.query<IPaintingByIdAnswer, number[] | undefined>(
 			{
 				query: (ids) =>
-					`api/v1/artworks?ids=${ids?.join()}&fields=id,artist_title,image_id,title`,
+					`api/v1/artworks?ids=${ids?.join()}&fields=id,artist_title,image_id,title&limit=3`,
 			}
 		),
 	}),
