@@ -5,6 +5,8 @@ import { useGetPaintingsByIdsQuery } from 'store/api/api';
 import { DetailInfoSection } from 'components/DetailInfoSection';
 import { Loader } from 'components/FrameContainerSection/styled';
 import loader from 'assets/svg/loader.svg';
+import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorFallback } from 'components/ErrorFallback';
 
 export function DetailInfo() {
 	const params = useParams();
@@ -14,15 +16,17 @@ export function DetailInfo() {
 	});
 	return (
 		<>
-			<Header />
-			{status === 'fulfilled' && data ? (
-				<DetailInfoSection data={data} />
-			) : (
-				<Loader>
-					<img src={loader} alt="something went wrong" />
-				</Loader>
-			)}
-			<Footer />
+			<ErrorBoundary FallbackComponent={ErrorFallback}>
+				<Header />
+				{status === 'fulfilled' && data ? (
+					<DetailInfoSection data={data} />
+				) : (
+					<Loader>
+						<img src={loader} alt="something went wrong" />
+					</Loader>
+				)}
+				<Footer />
+			</ErrorBoundary>
 		</>
 	);
 }
