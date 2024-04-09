@@ -9,9 +9,10 @@ import { IInfoBlock } from 'constants/IInfoBlock';
 import { FavoriteButton } from 'components/FavoriteButton';
 
 export function InfoBlock({
+	paintingId,
 	title,
 	artist_title,
-	verificationLevel,
+	is_public_domain,
 	image,
 }: IInfoBlock) {
 	return (
@@ -22,9 +23,14 @@ export function InfoBlock({
 					<ArtText>{title}</ArtText>
 					<ArtistText>{artist_title}</ArtistText>
 				</div>
-				<StatusText>{verificationLevel}</StatusText>
+				<StatusText>{is_public_domain ? 'public' : 'not public'}</StatusText>
 			</div>
-			<FavoriteButton />
+			<FavoriteButton
+				artist_title={artist_title}
+				is_public_domain={is_public_domain}
+				paintingId={paintingId}
+				title={title}
+			/>
 		</DetailsBlock>
 	);
 }

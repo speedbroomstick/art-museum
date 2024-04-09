@@ -30,7 +30,8 @@ export function FrameContainerSection({
 								<InfoBlock
 									title={painting.title}
 									artist_title={painting.artist_title}
-									verificationLevel="public"
+									is_public_domain={painting.is_public_domain}
+									paintingId={painting.id}
 									image={
 										inset
 											? `https://www.artic.edu/iiif/2/${painting.image_id}/full/387,444/0/default.jpg`
