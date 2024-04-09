@@ -1,12 +1,11 @@
-import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import { useRef, useEffect } from 'react';
 
 type Timer = ReturnType<typeof setTimeout>;
 
-export function useDebounce(
-	func: ActionCreatorWithPayload<string, 'search/setValueSearch'>,
+export function useDebounce<T extends (...args: unknown[]) => unknown>(
+	func: T,
 	delay = 1000
-) {
+): T {
 	const timer = useRef<Timer>();
 
 	useEffect(() => {
@@ -16,13 +15,13 @@ export function useDebounce(
 		};
 	}, []);
 
-	const debouncedFunction = ((...args) => {
+	const debouncedFunction = ((...args: Parameters<T>) => {
 		const newTimer = setTimeout(() => {
 			func(...args);
 		}, delay);
 		clearTimeout(timer.current);
 		timer.current = newTimer;
-	}) as ActionCreatorWithPayload<string, 'search/setValueSearch'>;
+	}) as T;
 
 	return debouncedFunction;
 }

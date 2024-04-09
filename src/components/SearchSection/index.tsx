@@ -1,33 +1,49 @@
 import {
 	HeaderText,
-	InputSearch,
 	Magnifier,
 	OrangeSpan,
 	VerticalContainer,
-	InputContainer,
+	FormStyled,
 } from 'components/SearchSection/styled';
 import magnifier from 'assets/svg/magnifier.svg';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+import { InputSearch } from 'components/InputSearch';
 import { useActions } from 'utils/useActions';
-import { useDebounce } from 'utils/useDebounce';
+
+const validationSchema = Yup.object().shape({
+	searchInput: Yup.string()
+		.max(20)
+		.matches(/^[a-zA-Z0-9]+$/),
+});
 
 export function SearchSection() {
 	const { setValueSearch } = useActions();
-	const debouncedValue = useDebounce(setValueSearch, 2000);
 
 	return (
 		<VerticalContainer theme={{ marginTop: '5rem' }}>
 			<HeaderText>
 				Let's Find Some <OrangeSpan>Art</OrangeSpan> Here!
 			</HeaderText>
-			<InputContainer>
-				<InputSearch
-					type="text"
-					name="search"
-					placeholder="Search Art, Artist, Work..."
-					onChange={(e) => debouncedValue(e.target.value)}
-				/>
-				<Magnifier src={magnifier} alt="" />
-			</InputContainer>
+			<Formik
+				validationSchema={validationSchema}
+				initialValues={{ searchInput: '' }}
+				onSubmit={(values) => {
+					setValueSearch(values.searchInput);
+				}}
+			>
+				{({ handleChange, submitForm }) => (
+					<FormStyled>
+						<InputSearch
+							name="searchInput"
+							placeholder="Search Art, Artist, Work..."
+							handleChange={handleChange}
+							submitForm={submitForm}
+						/>
+						<Magnifier src={magnifier} alt="" />
+					</FormStyled>
+				)}
+			</Formik>
 		</VerticalContainer>
 	);
 }
