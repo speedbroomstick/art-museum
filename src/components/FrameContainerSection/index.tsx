@@ -7,13 +7,13 @@ import {
 } from './styled';
 import { InfoBlock } from 'components/InfoBlock';
 import loader from 'assets/svg/loader.svg';
-import { IFrameContainerSection } from 'constants/IFrameContainerSection';
+import { IFrameContainerSectionProps } from 'constants/interfaces/IFrameContainerSection';
 
 export function FrameContainerSection({
 	status,
 	paintings,
 	inset = false,
-}: IFrameContainerSection) {
+}: IFrameContainerSectionProps) {
 	return (
 		<FrameContainer $inset={inset}>
 			{status === 'fulfilled' && paintings ? (

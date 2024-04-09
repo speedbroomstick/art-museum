@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FlexContainer } from 'constants/FlexContainer';
+import { FlexContainer } from 'constants/styles/FlexContainer';
 export const TextContainer = styled.div`
 	${FlexContainer}
 	margin: 4rem 0;

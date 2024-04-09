@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FlexContainer } from 'constants/FlexContainer';
+import { FlexContainer } from 'constants/styles/FlexContainer';
 
 export const FavoriteButtonStyled = styled.button<{ $active: boolean }>`
 	${FlexContainer}

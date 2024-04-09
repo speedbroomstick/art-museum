@@ -1,4 +1,4 @@
-import { FlexContainer } from 'constants/FlexContainer';
+import { FlexContainer } from 'constants/styles/FlexContainer';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 

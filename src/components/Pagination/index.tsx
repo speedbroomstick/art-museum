@@ -1,9 +1,9 @@
 import arrow from 'assets/svg/arrow.svg';
 import backArrow from 'assets/svg/BackArrow.svg';
 import { ActiveLink, Link, PaginationDiv } from 'components/Pagination/styled';
-import { IPagination } from 'constants/IPagination';
+import { IPaginationProps } from 'constants/interfaces/IPagination';
 
-export function Pagination({ paginationData, setPage }: IPagination) {
+export function Pagination({ paginationData, setPage }: IPaginationProps) {
 	const currentPage = paginationData.current_page;
 	return (
 		<PaginationDiv>

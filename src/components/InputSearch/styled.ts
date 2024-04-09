@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { FontStyle } from 'constants/FontStyle';
+import { FontStyle } from 'constants/styles/FontStyle';
 import { Field } from 'formik';
+import { FlexContainer } from 'constants/styles/FlexContainer';
 
 export const InputSearchField = styled(Field)`
 	${FontStyle}
@@ -19,4 +20,13 @@ export const InputSearchField = styled(Field)`
 	&::placeholder {
 		color: rgba(57, 57, 57, 0.5);
 	}
+`;
+export const InputWrap = styled.div`
+	${FlexContainer}
+`;
+export const Magnifier = styled.img`
+	margin-left: -3rem;
+`;
+export const SpanEror = styled.span`
+	color: rgb(255, 0, 0);
 `;

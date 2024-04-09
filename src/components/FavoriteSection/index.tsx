@@ -1,7 +1,7 @@
 import { QueryStatus } from '@reduxjs/toolkit/query';
 import { FrameContainerSection } from 'components/FrameContainerSection';
 import { HeaderForSection } from 'components/HeaderForSection';
-import { IDataForLocalStorage } from 'constants/IDataForLocalStorage';
+import { IDataForLocalStorage } from 'constants/interfaces/IDataForLocalStorage';
 import { useEffect, useState } from 'react';
 import { HeaderText } from 'components/SearchSection/styled';
 import bookMark from 'assets/svg/massiveBookMark.svg';

@@ -1,4 +1,4 @@
-export interface IInfoBlock {
+export interface IInfoBlockProps {
 	paintingId: number;
 	title: string;
 	artist_title: string;

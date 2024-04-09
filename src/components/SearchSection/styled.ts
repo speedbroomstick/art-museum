@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FlexContainer } from 'constants/FlexContainer';
+import { FlexContainer } from 'constants/styles/FlexContainer';
 import { Form } from 'formik';
 
 export const HeaderText = styled.h2`
@@ -28,8 +28,6 @@ export const VerticalContainer = styled.div`
 `;
 export const FormStyled = styled(Form)`
 	${FlexContainer}
+	flex-direction: column;
 	margin-top: 5rem;
-`;
-export const Magnifier = styled.img`
-	margin-left: -3rem;
 `;

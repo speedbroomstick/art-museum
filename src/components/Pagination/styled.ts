@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { FontStyle } from 'constants/FontStyle';
-import { FlexContainer } from 'constants/FlexContainer';
+import { FontStyle } from 'constants/styles/FontStyle';
+import { FlexContainer } from 'constants/styles/FlexContainer';
 
 export const PaginationDiv = styled.div`
 	${FlexContainer}

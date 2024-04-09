@@ -1,6 +1,6 @@
 import bookMark from 'assets/svg/bookMark.svg';
 import { FavoriteButtonStyled } from './styled';
-import { IFavoriteButtonProps } from 'constants/IFavoriteButtonProps';
+import { IFavoriteButtonProps } from 'constants/interfaces/IFavoriteButtonProps';
 import {
 	addIntoLocalStorage,
 	deleteFromLocalStorage,

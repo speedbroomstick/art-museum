@@ -1,4 +1,4 @@
-import { IPaintingByIdAnswer } from 'constants/IPaintingByIdAnswer';
+import { IPaintingByIdAnswer } from 'constants/interfaces/IPaintingByIdAnswer';
 import {
 	HeadText,
 	DescriptionDiv,

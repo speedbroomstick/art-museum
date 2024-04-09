@@ -1,7 +1,8 @@
 import { ErrorMessage as Error } from 'formik';
-import { InputSearchField } from './styled';
+import { InputSearchField, InputWrap, Magnifier, SpanEror } from './styled';
 import { useDebounce } from 'utils/useDebounce';
-import { IInputSearchProps } from 'constants/IInputSearchProps';
+import { IInputSearchProps } from 'constants/interfaces/IInputSearchProps';
+import magnifier from 'assets/svg/magnifier.svg';
 
 export function InputSearch({
 	name,
@@ -13,15 +14,18 @@ export function InputSearch({
 
 	return (
 		<>
-			<InputSearchField
-				name={name}
-				placeholder={placeholder}
-				onChange={(e: React.ChangeEvent) => {
-					handleChange(e);
-					debounceSubmit();
-				}}
-			/>
-			<Error name={name}>{(error) => <span>{error}</span>}</Error>
+			<InputWrap>
+				<InputSearchField
+					name={name}
+					placeholder={placeholder}
+					onChange={(e: React.ChangeEvent) => {
+						handleChange(e);
+						debounceSubmit();
+					}}
+				/>
+				<Magnifier src={magnifier} alt="" />
+			</InputWrap>
+			<Error name={name}>{(error) => <SpanEror>*{error}</SpanEror>}</Error>
 		</>
 	);
 }

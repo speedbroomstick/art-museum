@@ -1,21 +1,13 @@
 import {
 	HeaderText,
-	Magnifier,
 	OrangeSpan,
 	VerticalContainer,
 	FormStyled,
 } from 'components/SearchSection/styled';
-import magnifier from 'assets/svg/magnifier.svg';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
+import { validationSchema } from 'constants/validation/validationScheme';
 import { InputSearch } from 'components/InputSearch';
 import { useActions } from 'utils/useActions';
-
-const validationSchema = Yup.object().shape({
-	searchInput: Yup.string()
-		.max(20)
-		.matches(/^[a-zA-Z0-9]+$/),
-});
 
 export function SearchSection() {
 	const { setValueSearch } = useActions();
@@ -40,7 +32,6 @@ export function SearchSection() {
 							handleChange={handleChange}
 							submitForm={submitForm}
 						/>
-						<Magnifier src={magnifier} alt="" />
 					</FormStyled>
 				)}
 			</Formik>

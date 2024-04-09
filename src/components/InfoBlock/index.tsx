@@ -5,7 +5,7 @@ import {
 	ImageContainer,
 	StatusText,
 } from './styled';
-import { IInfoBlock } from 'constants/IInfoBlock';
+import { IInfoBlockProps } from 'constants/interfaces/IInfoBlock';
 import { FavoriteButton } from 'components/FavoriteButton';
 
 export function InfoBlock({
@@ -15,7 +15,7 @@ export function InfoBlock({
 	artist_title,
 	is_public_domain,
 	image,
-}: IInfoBlock) {
+}: IInfoBlockProps) {
 	return (
 		<DetailsBlock $image={!!image}>
 			{image ? <ImageContainer src={image} /> : null}

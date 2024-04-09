@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { FlexContainer } from 'constants/FlexContainer';
-import { FontStyle } from 'constants/FontStyle';
+import { FlexContainer } from 'constants/styles/FlexContainer';
+import { FontStyle } from 'constants/styles/FontStyle';
 
 export const DetailsBlock = styled.div<{ $image?: boolean }>`
 	${FlexContainer}
