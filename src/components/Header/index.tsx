@@ -24,7 +24,7 @@ export function Header() {
 							<img src={home} />
 							Home
 						</LinkStyled>
-						<LinkStyled to={'favorites'}>
+						<LinkStyled to={'/favorites'}>
 							<img src={bookmark} alt="" />
 							Your favorites
 						</LinkStyled>

@@ -7,6 +7,7 @@ import { store } from 'store/index';
 import { Theme } from 'constants/Themes';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { DetailInfo } from 'pages/DetailInfo';
+import { FavoritePage } from 'pages/FavoritePage';
 
 const router = createBrowserRouter([
 	{
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
 	{
 		path: '/detailInfo/:paintingId',
 		element: <DetailInfo />,
+	},
+	{
+		path: '/favorites',
+		element: <FavoritePage />,
 	},
 ]);
 
