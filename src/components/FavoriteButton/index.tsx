@@ -1,7 +1,12 @@
 import bookMark from 'assets/svg/bookMark.svg';
 import { FavoriteButtonStyled } from './styled';
 import { IFavoriteButtonProps } from 'constants/IFavoriteButtonProps';
-import { addIntoLocalStorage } from 'utils/localStorage';
+import {
+	addIntoLocalStorage,
+	deleteFromLocalStorage,
+	isInLocalStorage,
+} from 'utils/localStorage';
+import { useState } from 'react';
 
 export function FavoriteButton({
 	id,
@@ -17,12 +22,17 @@ export function FavoriteButton({
 		artist_title,
 		is_public_domain,
 	};
+	const [isActive, setIsActive] = useState(isInLocalStorage(id));
 	return (
 		<FavoriteButtonStyled
+			$active={isActive}
 			onClick={(e) => {
 				e.preventDefault();
 				e.stopPropagation();
-				addIntoLocalStorage(dataForSave);
+				isActive
+					? deleteFromLocalStorage(id)
+					: addIntoLocalStorage(dataForSave);
+				setIsActive(!isActive);
 			}}
 		>
 			<img src={bookMark} alt="" />

@@ -17,15 +17,15 @@ export function FavoriteSection() {
 	}, []);
 	return (
 		<>
-		<TextContainer>
-			<HeaderText>
-				Here are your{' '}
-				<OrangeText>
-					<img src={bookMark} alt="" />
-					Favorites
-				</OrangeText>
-			</HeaderText>
-		</TextContainer>
+			<TextContainer>
+				<HeaderText>
+					Here are your{' '}
+					<OrangeText>
+						<img src={bookMark} alt="" />
+						Favorites
+					</OrangeText>
+				</HeaderText>
+			</TextContainer>
 			<HeaderForSection
 				orangeText="Saved by you"
 				mainTitle="Your favorites list"

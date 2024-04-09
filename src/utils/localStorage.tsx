@@ -4,17 +4,25 @@ export function addIntoLocalStorage(painting: IDataForLocalStorage) {
 	const paintings = Array.from(
 		JSON.parse(localStorage.getItem('favoritePaintins')!) ?? []
 	);
-	if (checkRepeatsRecord(paintings as IDataForLocalStorage[], painting))
-		return true;
 	localStorage.setItem(
 		'favoritePaintins',
 		JSON.stringify([...paintings, painting])
 	);
 }
 
-export function checkRepeatsRecord(
-	paintings: IDataForLocalStorage[],
-	record: IDataForLocalStorage
-) {
-	return paintings.some((painting) => painting.id === record.id);
+export function isInLocalStorage(id: number) {
+	const paintings: IDataForLocalStorage[] = Array.from(
+		JSON.parse(localStorage.getItem('favoritePaintins')!) ?? []
+	);
+	return paintings.some((painting) => painting.id === id);
+}
+
+export function deleteFromLocalStorage(id: number) {
+	let paintings: IDataForLocalStorage[] = JSON.parse(
+		localStorage.getItem('favoritePaintins')!
+	);
+	if (paintings) {
+		paintings = paintings.filter((item) => item.id !== id);
+		localStorage.setItem('favoritePaintins', JSON.stringify(paintings));
+	}
 }

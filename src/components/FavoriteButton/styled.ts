@@ -1,17 +1,24 @@
 import styled from 'styled-components';
 import { FlexContainer } from 'constants/FlexContainer';
 
-export const FavoriteButtonStyled = styled.button`
+export const FavoriteButtonStyled = styled.button<{ $active: boolean }>`
 	${FlexContainer}
 	width: 59px;
 	height: 59px;
 	align-self: center;
 	flex: 0 0 auto;
-	background-color: rgba(251, 215, 178, 0.3);
+	background-color: ${({ $active }) =>
+		$active ? 'rgb(251, 215, 178)!important' : 'rgba(251, 215, 178, 0.3)'};
 	border-radius: 35.09px;
 	border: none;
 	cursor: pointer;
 	&:hover {
-		background-color: rgba(251, 215, 178, 0.5);
+		background-color: ${({ $active }) =>
+			$active
+				? 'rgba(251, 215, 178, .5)!important'
+				: 'rgba(251, 215, 178, 0.5)'};
+	}
+	&:active {
+		transform: scale(1.1);
 	}
 `;
