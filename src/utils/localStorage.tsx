@@ -16,7 +16,5 @@ export function checkRepeatsRecord(
 	paintings: IDataForLocalStorage[],
 	record: IDataForLocalStorage
 ) {
-	return paintings.some(
-		(painting) => painting.paintingId === record.paintingId
-	);
+	return paintings.some((painting) => painting.id === record.id);
 }

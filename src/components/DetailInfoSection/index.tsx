@@ -29,7 +29,8 @@ export function DetailInfoSection({
 						<FavoriteButton
 							artist_title={painting.artist_title}
 							is_public_domain={painting.is_public_domain}
-							paintingId={painting.id}
+							id={painting.id}
+							image_id={painting.image_id}
 							title={painting.title}
 						/>
 					</ImageDiv>

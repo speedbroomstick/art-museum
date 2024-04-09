@@ -1,8 +1,9 @@
 import { QueryStatus } from '@reduxjs/toolkit/query';
-import { IPaintingByIdAnswer } from 'constants/IPaintingByIdAnswer';
+import { IDataForLocalStorage } from 'constants/IDataForLocalStorage';
+import { IDaum } from 'constants/IPaintingByIdAnswer';
 
 export interface IFrameContainerSection {
 	status: QueryStatus;
-	paintings: IPaintingByIdAnswer | undefined;
+	paintings: IDaum[] | IDataForLocalStorage[] | undefined;
 	inset?: boolean;
 }

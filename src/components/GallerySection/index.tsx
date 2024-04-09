@@ -14,7 +14,7 @@ export function GallerySection() {
 				orangeText="Topics for you"
 				mainTitle="Our special gallery"
 			/>
-			<FrameContainerSection paintings={painting} status={status} />
+			<FrameContainerSection paintings={painting?.data} status={status} />
 			{pagination ? (
 				<Pagination paginationData={pagination} setPage={setPage} />
 			) : null}

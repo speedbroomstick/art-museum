@@ -12,7 +12,7 @@ export function OtherWorks() {
 			/>
 			<FrameContainerSection
 				status={status}
-				paintings={painting}
+				paintings={painting?.data}
 				inset={true}
 			/>
 		</>

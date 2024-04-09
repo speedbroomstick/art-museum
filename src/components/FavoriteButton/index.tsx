@@ -4,13 +4,15 @@ import { IFavoriteButtonProps } from 'constants/IFavoriteButtonProps';
 import { addIntoLocalStorage } from 'utils/localStorage';
 
 export function FavoriteButton({
-	paintingId,
+	id,
+	image_id,
 	title,
 	artist_title,
 	is_public_domain,
 }: IFavoriteButtonProps) {
 	const dataForSave = {
-		paintingId,
+		id,
+		image_id,
 		title,
 		artist_title,
 		is_public_domain,

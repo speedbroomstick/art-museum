@@ -18,9 +18,9 @@ export function FrameContainerSection({
 		<FrameContainer $inset={inset}>
 			{status === 'fulfilled' && paintings ? (
 				<>
-					{paintings.data.map((painting) => (
+					{paintings.map((painting) => (
 						<LinkStyled key={painting.id} to={`/detailInfo/${painting.id}`}>
-							<CardContainer key={painting.id}>
+							<CardContainer>
 								{!inset ? (
 									<ImageStyled
 										src={`https://www.artic.edu/iiif/2/${painting.image_id}/full/387,444/0/default.jpg`}
@@ -31,6 +31,7 @@ export function FrameContainerSection({
 									title={painting.title}
 									artist_title={painting.artist_title}
 									is_public_domain={painting.is_public_domain}
+									image_url={painting.image_id}
 									paintingId={painting.id}
 									image={
 										inset

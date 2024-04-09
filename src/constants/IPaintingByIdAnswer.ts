@@ -4,7 +4,7 @@ export interface IPaintingByIdAnswer {
 	config: IConfig;
 }
 
-interface IDaum {
+export interface IDaum {
 	id: number;
 	title: string;
 	artist_title: string;

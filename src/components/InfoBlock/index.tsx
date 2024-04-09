@@ -10,6 +10,7 @@ import { FavoriteButton } from 'components/FavoriteButton';
 
 export function InfoBlock({
 	paintingId,
+	image_url,
 	title,
 	artist_title,
 	is_public_domain,
@@ -28,7 +29,8 @@ export function InfoBlock({
 			<FavoriteButton
 				artist_title={artist_title}
 				is_public_domain={is_public_domain}
-				paintingId={paintingId}
+				image_id={image_url}
+				id={paintingId}
 				title={title}
 			/>
 		</DetailsBlock>
