@@ -7,7 +7,9 @@ import {
 	DateText,
 	TextOverview,
 	OrangeSpan,
+	ImageDiv,
 } from './styled';
+import { FavoriteButton } from 'components/FavoriteButton';
 
 export function DetailInfoSection({
 	data,
@@ -16,10 +18,13 @@ export function DetailInfoSection({
 }) {
 	return (
 		<DetailMain>
-			<img
-				src={`https://www.artic.edu/iiif/2/${data?.data[0].image_id}/full/400,511/0/default.jpg`}
-				alt=""
-			/>
+			<ImageDiv>
+				<img
+					src={`https://www.artic.edu/iiif/2/${data?.data[0].image_id}/full/400,511/0/default.jpg`}
+					alt=""
+				/>
+				<FavoriteButton />
+			</ImageDiv>
 			<DescriptionDiv>
 				<div>
 					<HeadText>{data?.data[0].title}</HeadText>

@@ -45,3 +45,20 @@ export const TextOverview = styled.p`
 export const OrangeSpan = styled.span`
 	color: ${({ theme }) => theme.colors.orange};
 `;
+export const ImageDiv = styled.div`
+	display: grid;
+	& > button,
+	img {
+		grid-area: 1/1/2/2;
+	}
+	& > button {
+		align-self: initial;
+		justify-self: flex-end;
+		background-color: rgb(255, 255, 255);
+		border: 1px solid rgb(240, 241, 241);
+		margin: 1rem 1rem;
+	}
+	& > button:hover {
+		background-color: rgba(255, 255, 255, 0.6);
+	}
+`;

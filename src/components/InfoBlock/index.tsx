@@ -1,13 +1,12 @@
-import bookMark from 'assets/svg/bookMark.svg';
 import {
 	ArtText,
 	ArtistText,
 	DetailsBlock,
-	FavoriteButton,
 	ImageContainer,
 	StatusText,
 } from './styled';
 import { IInfoBlock } from 'constants/IInfoBlock';
+import { FavoriteButton } from 'components/FavoriteButton';
 
 export function InfoBlock({
 	title,
@@ -25,9 +24,7 @@ export function InfoBlock({
 				</div>
 				<StatusText>{verificationLevel}</StatusText>
 			</div>
-			<FavoriteButton>
-				<img src={bookMark} alt="" />
-			</FavoriteButton>
+			<FavoriteButton />
 		</DetailsBlock>
 	);
 }
