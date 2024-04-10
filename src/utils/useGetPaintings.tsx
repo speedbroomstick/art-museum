@@ -7,6 +7,7 @@ export function useGetPaintings(page: number, limit: number) {
 		page,
 		limit,
 		search: searchValue.value,
+		sort: searchValue.sort,
 	});
 	const { data: painting, status } = useGetPaintingsByIdsQuery({
 		ids: data?.data.map((id) => id.id),

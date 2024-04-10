@@ -3,6 +3,7 @@ import { InputSearchField, InputWrap, Magnifier, SpanEror } from './styled';
 import { useDebounce } from 'utils/useDebounce';
 import { IInputSearchProps } from 'constants/interfaces/IInputSearchProps';
 import magnifier from 'assets/svg/magnifier.svg';
+import { SortButton } from 'components/SortButton';
 
 export function InputSearch({
 	name,
@@ -24,6 +25,7 @@ export function InputSearch({
 					}}
 				/>
 				<Magnifier src={magnifier} alt="" />
+				<SortButton />
 			</InputWrap>
 			<Error name={name}>{(error) => <SpanEror>*{error}</SpanEror>}</Error>
 		</>

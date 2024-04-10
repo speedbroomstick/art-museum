@@ -11,7 +11,6 @@ import { useActions } from 'utils/useActions';
 
 export function SearchSection() {
 	const { setValueSearch } = useActions();
-
 	return (
 		<VerticalContainer theme={{ marginTop: '5rem' }}>
 			<HeaderText>
@@ -21,7 +20,7 @@ export function SearchSection() {
 				validationSchema={validationSchema}
 				initialValues={{ searchInput: '' }}
 				onSubmit={(values) => {
-					setValueSearch(values.searchInput);
+					setValueSearch({ value: values.searchInput, sort: false });
 				}}
 			>
 				{({ handleChange, submitForm }) => (

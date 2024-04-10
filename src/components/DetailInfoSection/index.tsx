@@ -9,6 +9,7 @@ import {
 	OrangeSpan,
 	ImageDiv,
 } from './styled';
+import defaultImafe from 'assets/svg/imageNotFoun.svg';
 import { FavoriteButton } from 'components/FavoriteButton';
 
 export function DetailInfoSection({
@@ -23,8 +24,11 @@ export function DetailInfoSection({
 				<DetailMain>
 					<ImageDiv>
 						<img
-							src={`https://www.artic.edu/iiif/2/${painting.image_id}/full/400,511/0/default.jpg`}
-							alt=""
+							src={
+								painting.image_id
+									? `https://www.artic.edu/iiif/2/${painting.image_id}/full/400,511/0/default.jpg`
+									: defaultImafe
+							}
 						/>
 						<FavoriteButton
 							artist_title={painting.artist_title}

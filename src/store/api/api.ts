@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { IPaintingByIdAnswer } from 'constants/IPaintingByIdAnswer';
-import { IPaintingsAnswer } from 'constants/IPaintinsAnswer';
+import { IPaintingByIdAnswer } from 'constants/interfaces/IPaintingByIdAnswer';
+import { IPaintingsAnswer } from 'constants/interfaces/IPaintinsAnswer';
 
 export const paintingApi = createApi({
 	reducerPath: 'paintingApi',
@@ -9,10 +9,10 @@ export const paintingApi = createApi({
 	endpoints: (builder) => ({
 		getPaintings: builder.query<
 			IPaintingsAnswer,
-			{ page: number; limit: number; search: string }
+			{ page: number; limit: number; search: string; sort: boolean }
 		>({
-			query: ({ page = 1, limit, search = '' }) =>
-				`api/v1/artworks/search?page=${page}&limit=${limit}&q=painting ${search}&fields=id`,
+			query: ({ page = 1, limit, search = '', sort }) =>
+				`api/v1/artworks/search?page=${page}&limit=${limit}&q=painting ${search}&fields=id${sort ? '&sort=fiscal_year' : ''}`,
 		}),
 		getPaintingsByIds: builder.query<
 			IPaintingByIdAnswer,

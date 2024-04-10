@@ -7,6 +7,7 @@ import {
 } from './styled';
 import { InfoBlock } from 'components/InfoBlock';
 import loader from 'assets/svg/loader.svg';
+import defaultImafe from 'assets/svg/imageNotFoun.svg';
 import { IFrameContainerSectionProps } from 'constants/interfaces/IFrameContainerSection';
 
 export function FrameContainerSection({
@@ -23,8 +24,11 @@ export function FrameContainerSection({
 							<CardContainer>
 								{!inset ? (
 									<ImageStyled
-										src={`https://www.artic.edu/iiif/2/${painting.image_id}/full/387,444/0/default.jpg`}
-										alt="no photo"
+										src={
+											painting.image_id
+												? `https://www.artic.edu/iiif/2/${painting.image_id}/full/387,444/0/default.jpg`
+												: defaultImafe
+										}
 									/>
 								) : null}
 								<InfoBlock
@@ -35,7 +39,9 @@ export function FrameContainerSection({
 									paintingId={painting.id}
 									image={
 										inset
-											? `https://www.artic.edu/iiif/2/${painting.image_id}/full/387,444/0/default.jpg`
+											? painting.image_id
+												? `https://www.artic.edu/iiif/2/${painting.image_id}/full/387,444/0/default.jpg`
+												: defaultImafe
 											: undefined
 									}
 								/>
