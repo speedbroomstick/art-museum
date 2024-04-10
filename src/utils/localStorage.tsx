@@ -1,8 +1,8 @@
-import { IDataForLocalStorage } from 'constants/IDataForLocalStorage';
+import { IDataForLocalStorage } from 'constants/interfaces/IDataForLocalStorage';
 
 export function addIntoLocalStorage(painting: IDataForLocalStorage) {
 	const paintings = Array.from(
-		JSON.parse(localStorage.getItem('favoritePaintins')!) ?? []
+		JSON.parse(localStorage.getItem('favoritePaintins') ?? '{}')
 	);
 	localStorage.setItem(
 		'favoritePaintins',
@@ -12,7 +12,7 @@ export function addIntoLocalStorage(painting: IDataForLocalStorage) {
 
 export function isInLocalStorage(id: number) {
 	const paintings: IDataForLocalStorage[] = Array.from(
-		JSON.parse(localStorage.getItem('favoritePaintins')!) ?? []
+		JSON.parse(localStorage.getItem('favoritePaintins') ?? '{}')
 	);
 	return paintings.some((painting) => painting.id === id);
 }

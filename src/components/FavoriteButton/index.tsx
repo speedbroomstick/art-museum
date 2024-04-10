@@ -8,30 +8,17 @@ import {
 } from 'utils/localStorage';
 import { useState } from 'react';
 
-export function FavoriteButton({
-	id,
-	image_id,
-	title,
-	artist_title,
-	is_public_domain,
-}: IFavoriteButtonProps) {
-	const dataForSave = {
-		id,
-		image_id,
-		title,
-		artist_title,
-		is_public_domain,
-	};
-	const [isActive, setIsActive] = useState(isInLocalStorage(id));
+export function FavoriteButton({ data }: IFavoriteButtonProps) {
+	const [isActive, setIsActive] = useState(isInLocalStorage(data.id));
+
 	return (
 		<FavoriteButtonStyled
+			data-testid="favoriteBut"
 			$active={isActive}
 			onClick={(e) => {
 				e.preventDefault();
 				e.stopPropagation();
-				isActive
-					? deleteFromLocalStorage(id)
-					: addIntoLocalStorage(dataForSave);
+				isActive ? deleteFromLocalStorage(data.id) : addIntoLocalStorage(data);
 				setIsActive(!isActive);
 			}}
 		>

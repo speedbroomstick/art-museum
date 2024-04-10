@@ -10,7 +10,7 @@ export function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
 			<AlertContainer>
 				<h2>❗Something went wrong❗</h2>
 				<TextMessage>
-					<pre>{error.message}</pre>
+					<pre data-testid="errorText">{error.message}</pre>
 				</TextMessage>
 				<TryAgain onClick={resetErrorBoundary}>Try again</TryAgain>
 			</AlertContainer>

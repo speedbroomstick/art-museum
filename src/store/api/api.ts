@@ -18,7 +18,7 @@ export const paintingApi = createApi({
 			IPaintingByIdAnswer,
 			{ ids: number[] | undefined; limit: number }
 		>({
-			query: ({ ids, limit }) =>
+			query: ({ ids = [4], limit }) =>
 				`api/v1/artworks?ids=${ids?.join()}&fields=id,artist_title,image_id,title,date_display,place_of_origin,dimensions,credit_line,is_public_domain,artist_display&limit=${limit}`,
 		}),
 	}),

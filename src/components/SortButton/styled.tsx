@@ -1,12 +1,13 @@
 import { FlexContainer } from 'constants/styles/FlexContainer';
 import styled from 'styled-components';
 
-export const SortIconBox = styled.button`
+export const SortIconBox = styled.button<{ $isActive: boolean }>`
 	${FlexContainer}
 	width: 64px;
 	height: 64px;
 	padding: 16px;
-	background-color: rgba(57, 57, 57, 0.05);
+	background-color: ${({ $isActive }) =>
+		$isActive ? 'rgba(247, 119, 0, 0.4)' : 'rgba(57, 57, 57, 0.05)'};
 	border-radius: 16px;
 	margin-left: 1.1rem;
 	border: none;

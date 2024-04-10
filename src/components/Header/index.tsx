@@ -32,6 +32,7 @@ export function Header() {
 				) : null}
 				<HorizontalContainer>
 					<BurgerMenu
+						data-testid="burgerMenu"
 						$isNavigation={isNavigation}
 						onClick={() => setIsNavigation(!isNavigation)}
 					>

@@ -8,6 +8,7 @@ export function SortButton() {
 	const searchValue = useAppSelector((state) => state.searchValue);
 	return (
 		<SortIconBox
+			$isActive={searchValue.sort}
 			type="button"
 			onClick={() =>
 				setValueSearch({ ...searchValue, sort: !searchValue.sort })

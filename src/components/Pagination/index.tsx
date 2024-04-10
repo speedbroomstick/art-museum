@@ -6,7 +6,7 @@ import { IPaginationProps } from 'constants/interfaces/IPagination';
 export function Pagination({ paginationData, setPage }: IPaginationProps) {
 	const currentPage = paginationData.current_page;
 	return (
-		<PaginationDiv>
+		<PaginationDiv data-testid="pagDiv">
 			{currentPage > 1 ? (
 				<>
 					<Link onClick={() => setPage(currentPage - 1)}>

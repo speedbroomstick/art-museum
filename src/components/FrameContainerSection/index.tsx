@@ -35,7 +35,7 @@ export function FrameContainerSection({
 									title={painting.title}
 									artist_title={painting.artist_title}
 									is_public_domain={painting.is_public_domain}
-									image_url={painting.image_id}
+									image_id={painting.image_id}
 									paintingId={painting.id}
 									image={
 										inset

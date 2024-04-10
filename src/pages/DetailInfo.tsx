@@ -5,8 +5,6 @@ import { useGetPaintingsByIdsQuery } from 'store/api/api';
 import { DetailInfoSection } from 'components/DetailInfoSection';
 import { Loader } from 'components/FrameContainerSection/styled';
 import loader from 'assets/svg/loader.svg';
-import { ErrorBoundary } from 'react-error-boundary';
-import { ErrorFallback } from 'components/ErrorFallback';
 
 export function DetailInfo() {
 	const params = useParams();
@@ -14,19 +12,30 @@ export function DetailInfo() {
 		ids: [params.paintingId ? +params.paintingId : 8],
 		limit: 1,
 	});
+	const painting = data?.data[0];
+
 	return (
 		<>
-			<ErrorBoundary FallbackComponent={ErrorFallback}>
-				<Header />
-				{status === 'fulfilled' && data ? (
-					<DetailInfoSection data={data} />
-				) : (
-					<Loader>
-						<img src={loader} alt="something went wrong" />
-					</Loader>
-				)}
-				<Footer />
-			</ErrorBoundary>
+			<Header />
+			{status === 'fulfilled' && painting ? (
+				<DetailInfoSection
+					artist_display={painting.artist_display}
+					artist_title={painting.artist_title}
+					credit_line={painting.credit_line}
+					date_display={painting.date_display}
+					id={painting.id}
+					image_id={painting.image_id}
+					title={painting.title}
+					is_public_domain={painting.is_public_domain}
+					place_of_origin={painting.place_of_origin}
+					dimensions={painting.dimensions}
+				/>
+			) : (
+				<Loader>
+					<img src={loader} alt="something went wrong" />
+				</Loader>
+			)}
+			<Footer />
 		</>
 	);
 }
