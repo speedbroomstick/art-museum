@@ -36,7 +36,9 @@ export function FavoriteSection() {
 					status={'fulfilled' as QueryStatus}
 					inset={true}
 				/>
-			) : <OrangeText>Haven't saved yet</OrangeText>}
+			) : (
+				<OrangeText>Haven't saved yet</OrangeText>
+			)}
 		</>
 	);
 }
