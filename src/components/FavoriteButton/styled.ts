@@ -3,8 +3,8 @@ import { FlexContainer } from 'constants/styles/FlexContainer';
 
 export const FavoriteButtonStyled = styled.button<{ $active: boolean }>`
 	${FlexContainer}
-	width: 59px;
-	height: 59px;
+	width: 55px;
+	height: 55px;
 	align-self: center;
 	flex: 0 0 auto;
 	background-color: ${({ $active }) =>
