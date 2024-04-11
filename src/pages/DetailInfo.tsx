@@ -10,7 +10,6 @@ export function DetailInfo() {
 	const params = useParams();
 	const { data, status } = useGetPaintingsByIdsQuery({
 		ids: [params.paintingId ? +params.paintingId : 8],
-		limit: 1,
 	});
 	const painting = data?.data[0];
 
