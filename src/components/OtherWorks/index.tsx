@@ -1,9 +1,10 @@
+import { QueryStatus } from '@reduxjs/toolkit/query';
 import { FrameContainerSection } from 'components/FrameContainerSection';
 import { HeaderForSection } from 'components/HeaderForSection';
-import { useGetPaintings } from 'utils/useGetPaintings';
+import { useAppSelector } from 'utils/hooks';
 
 export function OtherWorks() {
-	const { status, painting } = useGetPaintings(4, 9);
+	const paintings = useAppSelector((state) => state.paintings);
 	return (
 		<>
 			<HeaderForSection
@@ -11,8 +12,12 @@ export function OtherWorks() {
 				mainTitle="Other works for you"
 			/>
 			<FrameContainerSection
-				status={status}
-				paintings={painting?.data}
+				status={
+					paintings.paintings.length
+						? ('fulfilled' as QueryStatus)
+						: ('pending' as QueryStatus)
+				}
+				paintings={paintings.paintings.slice(57, 66)}
 				inset={true}
 			/>
 		</>

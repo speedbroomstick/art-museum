@@ -9,17 +9,17 @@ export const paintingApi = createApi({
 	endpoints: (builder) => ({
 		getPaintings: builder.query<
 			IPaintingsAnswer,
-			{ page: number; limit: number; search: string; sort: boolean }
+			{ page: number; search: string; sort: boolean }
 		>({
-			query: ({ page = 1, limit, search = '', sort }) =>
-				`api/v1/artworks/search?page=${page}&limit=${limit}&q=painting ${search}&fields=id${sort ? '&sort=fiscal_year' : ''}`,
+			query: ({ page = 1, search = '', sort }) =>
+				`api/v1/artworks/search?page=${page}&limit=99&q=painting ${search}&fields=id${sort ? '&sort=fiscal_year' : ''}`,
 		}),
 		getPaintingsByIds: builder.query<
 			IPaintingByIdAnswer,
-			{ ids: number[] | undefined; limit: number }
+			{ ids: number[] | undefined }
 		>({
-			query: ({ ids = [4], limit }) =>
-				`api/v1/artworks?ids=${ids?.join()}&fields=id,artist_title,image_id,title,date_display,place_of_origin,dimensions,credit_line,is_public_domain,artist_display&limit=${limit}`,
+			query: ({ ids = [4] }) =>
+				`api/v1/artworks?ids=${ids?.join()}&fields=id,artist_title,image_id,title,date_display,place_of_origin,dimensions,credit_line,is_public_domain,artist_display&limit=99`,
 		}),
 	}),
 });

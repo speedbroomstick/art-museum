@@ -1,10 +1,12 @@
 import { useMemo } from 'react';
-import { actions } from 'store/slices/valueSearchSlice';
+import { actions as valueSearchActions } from 'store/slices/valueSearchSlice';
+import { actions as paintingsActions } from 'store/slices/paintingStorageSlice';
 import { useAppDispatch } from './hooks';
 import { bindActionCreators } from '@reduxjs/toolkit';
 
 const RootActions = {
-	...actions,
+	...valueSearchActions,
+	...paintingsActions,
 };
 
 export const useActions = () => {
