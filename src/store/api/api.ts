@@ -9,10 +9,10 @@ export const paintingApi = createApi({
 	endpoints: (builder) => ({
 		getPaintings: builder.query<
 			IPaintingsAnswer,
-			{ page: number; search: string; sort: boolean }
+			{ page: number; search: string }
 		>({
-			query: ({ page = 1, search = '', sort }) =>
-				`api/v1/artworks/search?page=${page}&limit=99&q=painting ${search}&fields=id${sort ? '&sort=fiscal_year' : ''}`,
+			query: ({ page = 1, search = '' }) =>
+				`api/v1/artworks/search?page=${page}&limit=99&q=painting ${search}&fields=id`,
 		}),
 		getPaintingsByIds: builder.query<
 			IPaintingByIdAnswer,

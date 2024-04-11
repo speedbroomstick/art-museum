@@ -1,20 +1,28 @@
 import sortIcon from 'assets/svg/sortIcon.svg';
+import sortBackIcon from 'assets/svg/sortBackIcon.svg';
 import { SortIconBox } from './styled';
-import { useActions } from 'utils/useActions';
 import { useAppSelector } from 'utils/hooks';
+import { useActions } from 'utils/useActions';
+import { sortByLetter } from 'utils/sortByLetter';
 
 export function SortButton() {
-	const { setValueSearch } = useActions();
-	const searchValue = useAppSelector((state) => state.searchValue);
+	const searchValues = useAppSelector((state) => state.searchValue);
+	const { setPaintings, setValueSearch } = useActions();
+	const paintings = useAppSelector((state) => state.paintings);
 	return (
 		<SortIconBox
-			$isActive={searchValue.sort}
+			$isActive={searchValues.sort}
 			type="button"
-			onClick={() =>
-				setValueSearch({ ...searchValue, sort: !searchValue.sort })
-			}
+			onClick={() => {
+				setValueSearch({ ...searchValues, sort: !searchValues.sort });
+				setPaintings(sortByLetter(paintings.paintings, searchValues.sort));
+			}}
 		>
-			<img src={sortIcon} alt="" />
+			<img
+				src={searchValues.sort ? sortBackIcon : sortIcon}
+				alt=""
+				title="By alphabet"
+			/>
 		</SortIconBox>
 	);
 }
